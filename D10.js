@@ -199,10 +199,30 @@ console.log(rollTheDices(5))
 */
 
 
-function howManyDays(data){}
+function howManyDays(){
+let dataodierna=new Date()
+let oggi=dataodierna.getDay()
+let datarbitraria=new Date(2023, 11, 7)
+let giornorand=datarbitraria.getDay()
+return oggi
+
+}
+
+console.log(howManyDays())
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+let isTodayMyBirthday = () => {
+  let now = new Date();
+  let month = now.getMonth() + 1;
+  let day = now.getDate();
+  if(month === 1 && day === 13){
+    return true;
+  } else {
+    return false;
+  };
+}
+isTodayMyBirthday()
 
 // Arrays & Oggetti
 
@@ -213,25 +233,48 @@ function howManyDays(data){}
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
+//function deleteProp(array,Object,Stringa){
+
+ 
+
+
+//delete Object.Stringa
+
+//return Object.Stringa
+
+//}
+
+//console.log(deleteProp(movies,movies[2],"Year"))
+
+
+
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
-/* ESERCIZIO 13
-  Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
-*/
 
-/* ESERCIZIO 14
-  Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
-*/
 
-/* ESERCIZIO 15
-  Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
-*/
 
-/* ESERCIZIO 16
+
+
+
+
+
+
+
+ /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+const sumAllTheYears= (array)=>{
+
+
+}
+
+
+
+
+
+
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
@@ -423,3 +466,71 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
+
+
+
+/* ESERCIZIO 12
+  Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
+*/
+
+const newestMovie = (array) =>{
+
+  let nuovo=array[0];
+  array.forEach(film=>{if (nuovo.Year<film.Year){
+
+    nuovo=film
+  }})
+
+return nuovo}
+  
+console.log(newestMovie(movies))
+
+
+/* ESERCIZIO 13
+  Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
+*/
+
+
+function countMovies(array){
+
+return array.length
+}
+
+console.log(countMovies(movies))
+
+
+/* ESERCIZIO 14
+  Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
+*/
+
+
+function onlyTheYears(array){
+
+  return array.map(film=> { return film = parseInt(film.Year)})
+  }
+  
+  console.log(onlyTheYears(movies))
+
+  /* ESERCIZIO 15
+  Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
+*/
+
+
+
+function onlyInLastMillennium(array){
+//impara a sovrascirvere modificare valore corrente a tuo vantaggio
+return array.filter(film=>{ film=parseInt(film.Year)
+
+return film<1999})
+
+}
+
+console.log(onlyInLastMillennium(movies))
+
+
+
+
+
+
+  
+
