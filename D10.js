@@ -152,6 +152,19 @@ console.log(isThisAnEmail("info@mail.com"))
 */
 
 
+function whatDayIsIt(date){
+
+let days=['DOM','LUN','MAR','MER','GIO','VEN','SAB']
+return days[date.getDay()]
+}
+
+let date=new Date()
+
+alert( whatDayIsIt(date))
+
+
+
+
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -165,6 +178,9 @@ console.log(isThisAnEmail("info@mail.com"))
       values: [3, 3, 4]
   }
 */
+
+
+function 
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
