@@ -216,18 +216,34 @@ let isTodayMyBirthday = () => {
   let now = new Date();
   let month = now.getMonth() + 1;
   let day = now.getDate();
-  if(month === 1 && day === 13){
+  if(month === 6 && day === 18){
     return true;
   } else {
     return false;
   };
 }
-isTodayMyBirthday()
+console.log(isTodayMyBirthday())
 
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
 
+/* ESERCIZIO 11
+  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; 
+  deve ritornare l'oggetto fornito dopo aver eliminato
+  in esso la proprietà chiamata come la stringa passata come secondo parametro.
+*/
+
+
+let obj ={
+  name: "Giuseppe",
+  surname: "Sansone"
+}
+function deleteProp(obj, str){
+  delete obj[str]
+  return obj
+}
+console.log(deleteProp(obj, "name"))
 
 
 
@@ -379,7 +395,20 @@ function trclass(){
   **
   ***
 
+ 
+
 */
+
+const halfTree = (x)=>{
+  for(let i = 1; i<=x; i++){
+    let riga = '';
+    for(let j = 1; j<=i; j++){
+      riga += '*'; 
+    }
+    console.log(riga)
+  }
+}
+halfTree(8)
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -536,33 +565,9 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
-/* ESERCIZIO 11
-  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; 
-  deve ritornare l'oggetto fornito dopo aver eliminato
-  in esso la proprietà chiamata come la stringa passata come secondo parametro.
-*/
-
-const deleteProp = (array,Stringa,oggetto) =>{
-
- array.push(oggetto)
-array.find(oggetto=>{
-  
- if( oggetto.Stringa===Stringa)
-delete Stringa})
-
-return oggetto
-      }
 
 
-  
-console.log(deleteProp(movies,movies.Year,{
-  Title: 'Qualcuno volo sul nido del Cuculo',
-  Year: '1980',
-  imdbID: 'tt47154796',
-  Type: 'movie',
-  Poster:
-    'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
-}))
+
 
 
 /* ESERCIZIO 12
@@ -661,16 +666,27 @@ console.log(searchByTitle(movies,'Avengers: Age of Ultron'))
 
 
 const searchAndDivide=(array,Stringa)=>{
+  oggetto={match:[],
+    unmatch:[]}
+  
 
-  let oggetto={match:[],
-  unmatch:[]}
+   array.forEach((film)=>{if(film.Title.includes(Stringa)){oggetto.match.push(film.Title)}
+  else{oggetto.unmatch.push(film.Title)}})
+
+  return oggetto
 }
 
-
+console.log(searchAndDivide(movies,'Avengers: Age of Ultron'))
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
+
+const removeIndex = function (array, numeroindice) {
+
+return array.splice(numeroindice,1)
+}
+console.log(removeIndex(movies,5))
 
 
 
