@@ -397,11 +397,27 @@ function trclass(){
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
+function isItPrime(num){
+  let cont = 0;
+  
+    for(let i = 1; i<=num;i++){
+      if(num % i === 0){
+        cont++
+      }
+    }
+    if(cont>2){
+      console.log(num + ' non è un numero primo')
+    }else{
+      console.log(num + ' è un numero primo')
+    }
+  }
 
-function istPrime(n){
+  isItPrime(20)
 
-if(n%2){}
-}
+
+
+
+
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
@@ -660,16 +676,3 @@ const searchAndDivide=(array,Stringa)=>{
 
 
 
-let cont = 0;
-const isItPrime = (num)=>{
-  for(let i = 1; i<=num;i++){
-    if(num % i === 0){
-      cont++
-    }
-  }
-  if(cont>2){
-    console.log(num + ' non è un numero primo')
-  }else{
-    console.log(num + ' è un numero primo')
-  }
-}
