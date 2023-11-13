@@ -160,7 +160,7 @@ return days[date.getDay()]
 
 let date=new Date()
 
-alert( whatDayIsIt(date))
+//alert( whatDayIsIt(date))
 
 
 
@@ -178,14 +178,28 @@ alert( whatDayIsIt(date))
       values: [3, 3, 4]
   }
 */
+function dice(){
 
+  let dado=Math.round(Math.random()*6)
+return dado
+}
 
-function 
+console.log(dice(3))
 
+function rollTheDices(num){
+let invocazioni=[];
+ 
+for(let i=0; i<num;i++)
+{  invocazioni[i]=dice()}
+ return invocazioni
+}
+console.log(rollTheDices(5))
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+
+function howManyDays(data){}
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
