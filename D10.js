@@ -228,66 +228,9 @@ isTodayMyBirthday()
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
 
-/* ESERCIZIO 11
-  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
-  in esso la proprietà chiamata come la stringa passata come secondo parametro.
-*/
-
-//function deleteProp(array,Object,Stringa){
-
- 
-
-
-//delete Object.Stringa
-
-//return Object.Stringa
-
-//}
-
-//console.log(deleteProp(movies,movies[2],"Year"))
 
 
 
-/* ESERCIZIO 12
-  Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
-*/
-
-
-
-
-
-
-
-
-
-
-
- /* ESERCIZIO 16
-  Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
-*/
-const sumAllTheYears= (array)=>{
-
-
-}
-
-
-
-
-
-
-
-/* ESERCIZIO 17
-  Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
-*/
-
-/* ESERCIZIO 18
-  Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
-  "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
-*/
-
-/* ESERCIZIO 19
-  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
-*/
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -295,30 +238,135 @@ const sumAllTheYears= (array)=>{
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+
+
+function container(){
+
+  const body = document.querySelector('body')
+  let div=document.createElement("div")
+  let appendidiv=body.appendChild(div)
+  
+  let divo=document.querySelector("#container")
+  let p=document.createElement("p")
+  let appendip=div.appendChild(p)
+  p.innerText="evvai"
+
+}
+
+container()
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
+
+function tagtdselection(){
+  for(i=0;i<5;i++){
+  const td = document.createElement("td");
+  td.innerText = "td";
+  document.body.appendChild(td);
+  const tuttitd = document.querySelectorAll('td')
+  tuttitd.forEach(ele=>ele.innerText="vafanculooooo")
+}
+
+}
+
+console.log(tagtdselection())
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+function tagtdselection(){
+  for(i=0;i<5;i++){
+  const td = document.createElement("td");
+  td.innerText = "td";
+  document.body.appendChild(td);
+  const tuttitd = document.querySelectorAll('td')
+  tuttitd.forEach(ele=>ele.innerText="vafanculooooo")
+}
+
+}
+
+console.log(tagtdselection())
+
+
+
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+function backgroundLink(){
+  for(i=0;i<5;i++){
+    const a = document.createElement("a");
+    a.innerText = "clicca";
+    a.href="www.wattelapesca.com"
+    document.body.appendChild(a);
+    const tuttia = document.querySelectorAll('a')
+    tuttia.forEach(ele=>
+      
+      ele.style.backgroundColor="red")
+  }
+  
+  }
+  
+  console.log(backgroundLink())
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+
+
+
+  const addToTheSecond = function (content) {
+    const ul = document.getElementById('myList')
+    const li = document.createElement("li");
+    li.innerText = content;
+    ul.appendChild(li);
+
+    // OPPURE
+    // ul.innerHTML += `<li>${content}</li>`
+  }
+  addToTheSecond('nuovo elemento')
+
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+function svuotalista(){
+  
+   
+  const ul = document.getElementById('myList')
+  
+ul.innerHTML="" //per cancellare ul e svuotarla?
+
+
+}
+
+console.log(svuotalista())
+
+
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
-
+function trclass(){
+  for(i=0;i<5;i++){
+    const tr = document.createElement("tr");
+    
+   
+    document.body.appendChild(tr);
+    const tuttitr = document.querySelectorAll('tr')
+    tuttitr.forEach(ele=>
+      
+     { ele.className="test"
+      ele.innerText="test"
+    console.dir(ele)}
+      )
+  }
+  
+  }
+  console.log(trclass())
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -348,6 +396,12 @@ const sumAllTheYears= (array)=>{
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+
+function istPrime(n){
+
+if(n%2){}
+}
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
@@ -466,7 +520,33 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
+/* ESERCIZIO 11
+  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; 
+  deve ritornare l'oggetto fornito dopo aver eliminato
+  in esso la proprietà chiamata come la stringa passata come secondo parametro.
+*/
 
+const deleteProp = (array,Stringa,oggetto) =>{
+
+ array.push(oggetto)
+array.find(oggetto=>{
+  
+ if( oggetto.Stringa===Stringa)
+delete Stringa})
+
+return oggetto
+      }
+
+
+  
+console.log(deleteProp(movies,movies.Year,{
+  Title: 'Qualcuno volo sul nido del Cuculo',
+  Year: '1980',
+  imdbID: 'tt47154796',
+  Type: 'movie',
+  Poster:
+    'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
+}))
 
 
 /* ESERCIZIO 12
@@ -529,8 +609,67 @@ console.log(onlyInLastMillennium(movies))
 
 
 
+/* ESERCIZIO 16
+  Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
+*/
+const sumAllTheYears= (array)=>{
 
+   return array.reduce((contatoreanni,film)=>
+  
+contatoreanni+parseInt(film.Year),0)
+  
+  }
+  console.log(sumAllTheYears(movies))
 
 
   
+/* ESERCIZIO 17
+  Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
+*/
 
+
+const searchByTitle= (array,StringaTitolo)=>{
+
+  return array.find(film=>film.Title===StringaTitolo)
+}
+console.log(searchByTitle(movies,'Avengers: Age of Ultron'))
+  
+
+
+
+
+/* ESERCIZIO 18
+  Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
+  "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
+*/
+
+
+const searchAndDivide=(array,Stringa)=>{
+
+  let oggetto={match:[],
+  unmatch:[]}
+}
+
+
+/* ESERCIZIO 19
+  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
+*/
+
+
+
+
+
+
+let cont = 0;
+const isItPrime = (num)=>{
+  for(let i = 1; i<=num;i++){
+    if(num % i === 0){
+      cont++
+    }
+  }
+  if(cont>2){
+    console.log(num + ' non è un numero primo')
+  }else{
+    console.log(num + ' è un numero primo')
+  }
+}
