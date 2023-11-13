@@ -62,22 +62,49 @@ console.log(me)
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+delete me.skills[2]
 
+console.log(me)
 // Funzioni
 
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
 
+
+function dice(){
+
+  let dado=Math.round(Math.random()*6)
+return dado
+}
+
+console.log(dice())
+
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
 
+function WhoIsBigger(num1,num2){
+
+if(num1>num2){return num1+ " è il numero più grande"}
+else if(num1===num2){return console.log("numbers are equal")}
+else{return num2 + " è il numero più grande"}}
+
+
+
+console.log(WhoIsBigger(4,5))
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+
+function splitMe(Stringa){
+
+  return Stringa.split(" ")
+}
+
+console.log(splitMe("tutto ciò è divertente"))
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
