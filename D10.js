@@ -33,6 +33,11 @@ console.log(random)
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
 
+let me={ name:Giuseppe,
+surname:Sansone,
+age:30}
+
+
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
