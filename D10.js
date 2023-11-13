@@ -199,14 +199,16 @@ console.log(rollTheDices(5))
 */
 
 
-function howManyDays(){
-let dataodierna=new Date()
-let oggi=dataodierna.getDay()
-let datarbitraria=new Date(2023, 11, 7)
-let giornorand=datarbitraria.getDay()
-return oggi
+let data1 = new Date("05/9/2011");
+let data2 = new Date();
 
+function howManyDays(){
+  var diffTempo = data2.getTime() - data1.getTime();
+  var diffGiorni = diffTempo / (1000 * 3600 * 24);
+  console.log("Differenza in ore: "+diffTempo);
+  console.log("Differenza in giorni: "+diffGiorni)
 }
+
 
 console.log(howManyDays())
 /* ESERCIZIO 10
@@ -399,16 +401,18 @@ function trclass(){
 
 */
 
-const halfTree = (x)=>{
-  for(let i = 1; i<=x; i++){
-    let riga = '';
-    for(let j = 1; j<=i; j++){
-      riga += '*'; 
-    }
-    console.log(riga)
+    const halfTree = (x)=>{
+      for(let i = 1; i<=x; i++){
+        let riga ="";
+        for(let j = 1; j<=i; j++){
+          riga += '*'; 
+        }
+        console.log(riga)
+      }
   }
-}
-halfTree(8)
+
+  
+console.log(halfTree(8))
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -421,6 +425,20 @@ halfTree(8)
   *****
 
 */
+
+function tree(num){
+  for(let i = 0; i <= num; i++){
+    let albero = ""
+    for(let x = 0; x < num - i; x++){
+      albero += " "
+    }
+    for(let y = 0; y<i; y++){
+      albero += " *"
+    }
+    console.log(albero)
+  }
+}
+tree(4)
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
