@@ -126,13 +126,32 @@ console.log(deleteOne("dorio",true))
 
 
 
+function onlyLetters(Stringa){
+return Stringa.replace(/[0-9]+\d*/g,"")
+
+}
+
+console.log(onlyLetters("I have 5  dogs and 3 cats"))
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+
+function isThisAnEmail(Stringa){
+let regex=/^[A-z0-9\.\+_-]+@[A-z0-9\._-]+\.[A-z]{2,6}$/;
+if (regex.test(Stringa)===true){return "la tua e-mail è valida"}
+else{return "la tua mail non è valida"}
+
+}
+
+console.log(isThisAnEmail("info@mail.com"))
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
